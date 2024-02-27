@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../app_colors.dart';
-
 class OnboardingTextStyle {
   static const TextStyle introduction = TextStyle(
     fontFamily: 'Inter',

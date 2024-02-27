@@ -1,5 +1,4 @@
-import 'package:education_app/views/constructor/widget/rating_widget.dart';
-import 'package:education_app/views/home/widgets/star_rating.dart';
+import 'package:education_app/views/home/widgets/star_rating_rep.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

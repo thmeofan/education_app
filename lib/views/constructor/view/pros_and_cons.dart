@@ -2,7 +2,6 @@ import 'package:education_app/views/app/widgets/input_widget.dart';
 import 'package:education_app/views/constructor/view/specielties.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../consts/app_colors.dart';
 import '../../../consts/app_text_styles/constructor_text_style.dart';
 import '../../../data/model/university_info.dart';
 import '../../app/widgets/chosen_action_button_widget.dart';
@@ -31,7 +30,7 @@ class _ProsAndConsScreenState extends State<ProsAndConsScreen> {
     Size size = MediaQuery.of(context).size;
     int numberOfTextFields = _prosControllers.length + _consControllers.length;
     double spacerHeight =
-        size.height * 0.55 - (numberOfTextFields * size.height * 0.1);
+        size.height * 0.55 - (numberOfTextFields * size.height * 0.11);
     if (spacerHeight < 0) {
       spacerHeight = 0;
     }
@@ -88,7 +87,7 @@ class _ProsAndConsScreenState extends State<ProsAndConsScreen> {
                             SizedBox(
                               width: size.width * 0.01,
                             ),
-                            Text(
+                            const Text(
                               'Pros',
                               style: ConstructorTextStyle.lable,
                             ),
@@ -96,7 +95,7 @@ class _ProsAndConsScreenState extends State<ProsAndConsScreen> {
                             TextButton(
                               onPressed: () =>
                                   _addNewProConField(_prosControllers),
-                              child: Text(
+                              child: const Text(
                                 'Add more',
                                 style: ConstructorTextStyle.add,
                               ),
@@ -121,7 +120,7 @@ class _ProsAndConsScreenState extends State<ProsAndConsScreen> {
                             SizedBox(
                               width: size.width * 0.01,
                             ),
-                            Text(
+                            const Text(
                               'Cons',
                               style: ConstructorTextStyle.lable,
                             ),
@@ -129,7 +128,7 @@ class _ProsAndConsScreenState extends State<ProsAndConsScreen> {
                             TextButton(
                               onPressed: () =>
                                   _addNewProConField(_consControllers),
-                              child: Text(
+                              child: const Text(
                                 'Add more',
                                 style: ConstructorTextStyle.add,
                               ),

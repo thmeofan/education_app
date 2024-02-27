@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../consts/app_colors.dart';
-
 typedef RatingChangeCallback = void Function(int rating);
 
 class StarRatingRep extends StatelessWidget {
   final int rating;
-  final Color color;
 
-  const StarRatingRep(
-      {super.key, required this.rating, this.color = AppColors.yellowColor});
+  const StarRatingRep({
+    super.key,
+    required this.rating,
+  });
 
   Widget buildStar(int index) {
     return Padding(

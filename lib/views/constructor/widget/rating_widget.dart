@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../consts/app_colors.dart';
-
 typedef RatingChangeCallback = void Function(int rating);
 
 class StarRating extends StatelessWidget {
   final int rating;
   final RatingChangeCallback onRatingChanged;
-  final Color color;
 
-  const StarRating(
-      {super.key,
-      required this.rating,
-      required this.onRatingChanged,
-      this.color = AppColors.yellowColor});
+  const StarRating({
+    super.key,
+    required this.rating,
+    required this.onRatingChanged,
+  });
 
   Widget buildStar(int index) {
     return GestureDetector(

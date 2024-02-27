@@ -35,7 +35,6 @@ class _SpecialtyPriorityState extends State<SpecialtyPriority> {
             child: Container(
               height: size.height * 0.074,
               width: size.width * 0.28,
-              //  padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 6.0),
               decoration: BoxDecoration(
                 color: AppColors.lightGreyColor,
                 border: Border.all(

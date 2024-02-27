@@ -5,7 +5,7 @@ class UniversityInfo {
   int rating;
   List<String> pros;
   List<String> cons;
-  Specialty? specialty; // Changed from List<Specialty> to Specialty
+  Specialty? specialty;
   String cost;
   String duration;
 
@@ -16,7 +16,7 @@ class UniversityInfo {
     this.rating = 0,
     this.pros = const [],
     this.cons = const [],
-    this.specialty, // Changed from this.specialties
+    this.specialty,
     this.cost = '',
     this.duration = '',
   });
@@ -30,7 +30,7 @@ class UniversityInfo {
         'cons': cons,
         'cost': cost,
         'duration': duration,
-        'specialty': specialty?.toJson(), // Changed to support single specialty
+        'specialty': specialty?.toJson(),
       };
 
   factory UniversityInfo.fromJson(Map<String, dynamic> json) => UniversityInfo(
@@ -42,10 +42,9 @@ class UniversityInfo {
         cons: List<String>.from(json['cons']),
         cost: json['cost'],
         duration: json['duration'],
-        specialty:
-            json['specialty'] != null // Check if specialty exists in JSON
-                ? Specialty.fromJson(json['specialty'])
-                : null,
+        specialty: json['specialty'] != null
+            ? Specialty.fromJson(json['specialty'])
+            : null,
       );
 }
 

@@ -56,46 +56,102 @@ class _BasicInfoScreenState extends State<BasicInfoScreen> {
               SizedBox(
                 height: size.height * 0.03,
               ),
+              Text(
+                'University name',
+                style: ConstructorTextStyle.subtitle,
+              ),
+              SizedBox(
+                height: size.height * 0.015,
+              ),
               InputWidget(controller: _nameController),
               SizedBox(
                 height: size.height * 0.02,
+              ),
+              Text(
+                'University location',
+                style: ConstructorTextStyle.subtitle,
+              ),
+              SizedBox(
+                height: size.height * 0.015,
               ),
               InputWidget(controller: _addressController),
               SizedBox(
                 height: size.height * 0.02,
               ),
+              Text(
+                'Description of the University',
+                style: ConstructorTextStyle.subtitle,
+              ),
+              SizedBox(
+                height: size.height * 0.015,
+              ),
               InputWidget(controller: _descriptionController),
               SizedBox(
                 height: size.height * 0.02,
               ),
-              Text(
-                'Rating of university reviews',
-                style: ConstructorTextStyle.rating,
-              ),
-              SizedBox(
-                height: size.height * 0.01,
-              ),
-              StarRating(
-                rating: _rating,
-                onRatingChanged: (rating) => setState(() => _rating = rating),
+              Container(
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  color: AppColors.lightGreyColor,
+                ),
+                height: size.height * 0.12,
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    top: size.height * 0.01,
+                    left: size.width * 0.025,
+                    right: size.width * 0.025,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Rating of university reviews',
+                        style: ConstructorTextStyle.rating,
+                      ),
+                      SizedBox(
+                        height: size.height * 0.01,
+                      ),
+                      StarRating(
+                        rating: _rating,
+                        onRatingChanged: (rating) =>
+                            setState(() => _rating = rating),
+                      ),
+                    ],
+                  ),
+                ),
               ),
               Spacer(),
               ChosenActionButton(
                 text: 'Continue',
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ProsAndConsScreen(
-                        universityInfo: UniversityInfo(
-                          name: _nameController.text,
-                          address: _addressController.text,
-                          description: _descriptionController.text,
-                          rating: _rating,
+                  if (_nameController.text.isNotEmpty &&
+                      _addressController.text.isNotEmpty &&
+                      _descriptionController.text.isNotEmpty &&
+                      _rating > 0) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ProsAndConsScreen(
+                          universityInfo: UniversityInfo(
+                            name: _nameController.text,
+                            address: _addressController.text,
+                            description: _descriptionController.text,
+                            rating: _rating,
+                          ),
                         ),
                       ),
-                    ),
-                  );
+                    );
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Please fill in all the fields before continuing.',
+                          style: ConstructorTextStyle.snackBar,
+                        ),
+                        duration: Duration(seconds: 2),
+                      ),
+                    );
+                  }
                 },
               ),
               SizedBox(

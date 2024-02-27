@@ -3,28 +3,39 @@ import 'package:flutter/material.dart';
 import '../app_colors.dart';
 
 class HomeScreenTextStyle {
-  static TextStyle name = const TextStyle(
-    fontFamily: 'Roboto',
-    fontSize: 20.0,
-    fontWeight: FontWeight.w700,
+  static const TextStyle name = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 22.0,
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
   );
 
   static TextStyle address = TextStyle(
-    fontFamily: 'Roboto',
+    fontFamily: 'Inter',
     fontSize: 14.0,
     fontWeight: FontWeight.w400,
-    color: Colors.black.withOpacity(0.35),
+    color: Colors.white.withOpacity(0.35),
   );
   static const TextStyle appbar = TextStyle(
-    fontFamily: 'Roboto',
-    fontSize: 24.0,
-    height: 22 / 20,
-    fontWeight: FontWeight.w700,
-    // color: AppColors.whiteColor,
+    fontFamily: 'Inter',
+    fontSize: 18.0,
+    fontWeight: FontWeight.w500,
+    color: AppColors.lightPurpleColor,
   );
   static const TextStyle banner = TextStyle(
-    fontFamily: 'Roboto',
-    fontSize: 48.0,
-    fontWeight: FontWeight.w700,
-  );
+      fontFamily: 'Inter',
+      fontSize: 32.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.white);
+  static const TextStyle subtitle = TextStyle(
+      fontFamily: 'Inter',
+      fontSize: 14.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.white);
+
+  static const TextStyle subtitlePurple = TextStyle(
+      fontFamily: 'Inter',
+      fontSize: 18.0,
+      fontWeight: FontWeight.w500,
+      color: AppColors.lightPurpleColor);
 }

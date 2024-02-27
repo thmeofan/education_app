@@ -71,10 +71,10 @@ class _ProsAndConsScreenState extends State<ProsAndConsScreen> {
                   child: SingleChildScrollView(
                     child: Column(
                       children: <Widget>[
-                        Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            const Text(
+                            Text(
                               'New university',
                               style: ConstructorTextStyle.title,
                             ),
@@ -89,7 +89,7 @@ class _ProsAndConsScreenState extends State<ProsAndConsScreen> {
                               width: size.width * 0.01,
                             ),
                             Text(
-                              'Ventajas',
+                              'Pros',
                               style: ConstructorTextStyle.lable,
                             ),
                             Spacer(),
@@ -122,7 +122,7 @@ class _ProsAndConsScreenState extends State<ProsAndConsScreen> {
                               width: size.width * 0.01,
                             ),
                             Text(
-                              'Contras',
+                              'Cons',
                               style: ConstructorTextStyle.lable,
                             ),
                             Spacer(),
@@ -156,18 +156,37 @@ class _ProsAndConsScreenState extends State<ProsAndConsScreen> {
                           child: ChosenActionButton(
                             text: 'Continue',
                             onTap: () {
-                              widget.universityInfo.pros =
-                                  _prosControllers.map((c) => c.text).toList();
-                              widget.universityInfo.cons =
-                                  _consControllers.map((c) => c.text).toList();
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => SpecialtiesScreen(
-                                    universityInfo: widget.universityInfo,
+                              bool prosFilled = _prosControllers.any(
+                                  (controller) => controller.text.isNotEmpty);
+                              bool consFilled = _consControllers.any(
+                                  (controller) => controller.text.isNotEmpty);
+
+                              if (prosFilled && consFilled) {
+                                widget.universityInfo.pros = _prosControllers
+                                    .map((c) => c.text)
+                                    .toList();
+                                widget.universityInfo.cons = _consControllers
+                                    .map((c) => c.text)
+                                    .toList();
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SpecialtiesScreen(
+                                      universityInfo: widget.universityInfo,
+                                    ),
                                   ),
-                                ),
-                              );
+                                );
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'Please add at least one pro and one con before continuing.',
+                                      style: ConstructorTextStyle.snackBar,
+                                    ),
+                                    duration: Duration(seconds: 2),
+                                  ),
+                                );
+                              }
                             },
                           ),
                         ),

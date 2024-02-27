@@ -52,10 +52,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: CarouselSlider(
                 items: const [
                   IntroductionWidget(
-                    imagePath: 'assets/images/onboarding1.png',
+                    imagePath: 'assets/images/onboarding1.svg',
                   ),
                   IntroductionWidget(
-                    imagePath: 'assets/images/onboarding2.png',
+                    imagePath: 'assets/images/onboarding2.svg',
                   ),
                 ],
                 carouselController: _carouselController,
@@ -103,7 +103,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: size.height * 0.01,
+                      height: size.height * 0.025,
                     ),
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                       Flexible(
@@ -112,6 +112,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               ? 'Add the universities that interest you for admission and highlight key information about them.'
                               : 'Analyze the conditions of all universities and choose the most suitable option for you.',
                           style: OnboardingTextStyle.description,
+                          textAlign: TextAlign.center,
+                          softWrap: true,
+                          overflow: TextOverflow.visible,
                         ),
                       ),
                     ]),

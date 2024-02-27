@@ -4,50 +4,56 @@ import '../app_colors.dart';
 
 class ConstructorTextStyle {
   static const TextStyle title = TextStyle(
-    fontFamily: 'SF Pro Text',
+    fontFamily: 'Inter',
     fontSize: 24.0,
     color: Colors.white,
     fontWeight: FontWeight.w700,
   );
-  static TextStyle hintText = TextStyle(
-      fontFamily: 'SF Pro Text',
-      fontSize: 16.0,
+  static TextStyle subtitle = const TextStyle(
+      fontFamily: 'Inter',
+      fontSize: 18.0,
       fontWeight: FontWeight.w500,
       color: AppColors.greyColor);
 
-  static TextStyle rating = TextStyle(
-    fontFamily: 'SF Pro Text',
-    fontSize: 16.0,
-    fontWeight: FontWeight.w400,
-    color: Colors.black.withOpacity(0.5),
+  static const TextStyle rating = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 18.0,
+    fontWeight: FontWeight.w500,
+    color: Colors.white,
   );
   static const TextStyle inputText = TextStyle(
-    fontFamily: 'SF Pro Text',
-    fontSize: 16.0,
-    fontWeight: FontWeight.w400,
-  );
+      fontFamily: 'Inter',
+      fontSize: 14.0,
+      fontWeight: FontWeight.w400,
+      color: Colors.white);
   static const TextStyle appBar = TextStyle(
-      fontFamily: 'SF Pro Text',
+      fontFamily: 'Inter',
       fontSize: 16.0,
       fontWeight: FontWeight.w400,
       color: AppColors.lightPurpleColor);
 
   static const TextStyle add = TextStyle(
-      fontFamily: 'SF Pro Text',
+      fontFamily: 'Inter',
       fontSize: 16.0,
       fontWeight: FontWeight.w300,
       color: AppColors.lightPurpleColor);
 
-  static TextStyle lable = TextStyle(
-    fontFamily: 'SF Pro Text',
+  static const TextStyle lable = TextStyle(
+    fontFamily: 'Inter',
     fontSize: 18.0,
     fontWeight: FontWeight.w500,
-    color: Colors.black.withOpacity(0.5),
+    color: AppColors.greyColor,
   );
   static TextStyle priority = TextStyle(
-    fontFamily: 'SF Pro Text',
-    fontSize: 18.0,
+    fontFamily: 'Inter',
+    fontSize: 14.0,
     fontWeight: FontWeight.w400,
-    color: Colors.black.withOpacity(0.5),
+    color: Colors.white,
+  );
+  static TextStyle snackBar = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 14.0,
+    fontWeight: FontWeight.w400,
+    color: AppColors.lightPurpleColor,
   );
 }

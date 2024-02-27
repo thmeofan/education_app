@@ -33,17 +33,20 @@ class ShortUniInfoWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SvgPicture.asset('assets/icons/hat.svg'),
-              SizedBox(
-                height: size.height * 0.01,
-              ),
+              // SvgPicture.asset('assets/icons/hat.svg'),
+              // SizedBox(
+              //   height: size.height * 0.01,
+              // ),
               Text(name, style: HomeScreenTextStyle.name),
               SizedBox(
-                height: size.height * 0.005,
+                height: size.height * 0.008,
               ),
               Text(
                 address,
                 style: HomeScreenTextStyle.address,
+              ),
+              SizedBox(
+                height: size.height * 0.008,
               ),
               Row(
                 children: [

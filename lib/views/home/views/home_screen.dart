@@ -42,14 +42,17 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        leadingWidth: size.width * 0.2,
+        leadingWidth: size.width * 0.3,
         leading: TextButton(
           onPressed: () {
             Navigator.of(context).pushNamed(
               AppRoutes.profile,
             );
           },
-          child: Text('Settings'),
+          child: const Text(
+            'Settings',
+            style: HomeScreenTextStyle.appbar,
+          ),
         ),
       ),
       body: Container(
@@ -59,24 +62,36 @@ class _HomeScreenState extends State<HomeScreen> {
             if (universities.isEmpty)
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.only(top: 16.0),
+                  padding: const EdgeInsets.only(top: 16.0),
                   child: Center(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SvgPicture.asset('assets/icons/hat.svg'),
-                            const Text('No university yet')
+                            SizedBox(
+                              width: size.width * 0.02,
+                            ),
+                            const Text(
+                              'No university yet',
+                              softWrap: true,
+                              overflow: TextOverflow.visible,
+                              style: HomeScreenTextStyle.subtitlePurple,
+                            )
                           ],
                         ),
-                        const Text(
-                          "Add the first university",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.grey,
-                          ),
+                        SizedBox(
+                          height: size.width * 0.02,
                         ),
+                        const Text("Add the first university",
+                            textAlign: TextAlign.center,
+                            softWrap: true,
+                            overflow: TextOverflow.visible,
+                            style: HomeScreenTextStyle.subtitle),
                       ],
                     ),
                   ),
@@ -86,29 +101,52 @@ class _HomeScreenState extends State<HomeScreen> {
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.only(
-                    top: size.height * 0.015,
+                    top: size.height * 0.005,
                     left: size.width * 0.015,
                     right: size.width * 0.015,
                   ),
-                  child: ListView.builder(
-                    itemCount: universities.length,
-                    itemBuilder: (context, index) {
-                      UniversityInfo uni = universities[index];
-                      return ShortUniInfoWidget(
-                        name: uni.name,
-                        address: uni.address,
-                        rating: uni.rating,
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  FullInfoScreen(universityInfo: uni),
-                            ),
-                          );
-                        },
-                      );
-                    },
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                          top: size.height * 0.005,
+                          left: size.width * 0.015,
+                          right: size.width * 0.015,
+                        ),
+                        child: const Text(
+                          'Your education',
+                          style: HomeScreenTextStyle.banner,
+                          softWrap: true,
+                          overflow: TextOverflow.visible,
+                        ),
+                      ),
+                      SizedBox(
+                        height: size.width * 0.02,
+                      ),
+                      Expanded(
+                        child: ListView.builder(
+                          itemCount: universities.length,
+                          itemBuilder: (context, index) {
+                            UniversityInfo uni = universities[index];
+                            return ShortUniInfoWidget(
+                              name: uni.name,
+                              address: uni.address,
+                              rating: uni.rating,
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        FullInfoScreen(universityInfo: uni),
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),

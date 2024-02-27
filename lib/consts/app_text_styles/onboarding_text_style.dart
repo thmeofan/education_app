@@ -4,23 +4,16 @@ import '../app_colors.dart';
 
 class OnboardingTextStyle {
   static const TextStyle introduction = TextStyle(
-    fontFamily: 'SF Pro Text',
-    fontSize: 24.0,
+    fontFamily: 'Inter',
+    fontSize: 22.0,
     color: Colors.white,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w600,
   );
-  static TextStyle description = TextStyle(
+  static TextStyle description = const TextStyle(
     fontFamily: 'SF Pro Text',
-    fontSize: 18.0,
-    fontWeight: FontWeight.w500,
+    fontSize: 14.0,
+    fontWeight: FontWeight.w600,
     color: Colors.white,
-  );
-
-  static const TextStyle screenTitle = TextStyle(
-    fontFamily: 'SF Pro Text',
-    fontSize: 18.0,
-    fontWeight: FontWeight.w700,
-    height: 24.0 / 20.0,
   );
   static const TextStyle button = TextStyle(
     fontFamily: 'SF Pro Text',

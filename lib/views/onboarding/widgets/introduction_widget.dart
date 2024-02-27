@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class IntroductionWidget extends StatelessWidget {
   final String imagePath;
 
   const IntroductionWidget({
-    key,
+    Key? key,
     required this.imagePath,
   }) : super(key: key);
 
@@ -14,11 +16,11 @@ class IntroductionWidget extends StatelessWidget {
     return Container(
       height: size.height * 0.4,
       width: double.infinity,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(imagePath),
-          fit: BoxFit.cover,
-        ),
+      child: SvgPicture.asset(
+        imagePath,
+        fit: BoxFit.cover,
+        width: double.infinity,
+        height: size.height * 0.4,
       ),
     );
   }

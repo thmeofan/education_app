@@ -24,7 +24,7 @@ class _SpecialtyPriorityState extends State<SpecialtyPriority> {
 
   @override
   Widget build(BuildContext context) {
-    List<String> priorityTexts = ['Primero', 'Segundo', 'Tercero'];
+    List<String> priorityTexts = ['First', 'Second', 'Third'];
     Size size = MediaQuery.of(context).size;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -34,13 +34,17 @@ class _SpecialtyPriorityState extends State<SpecialtyPriority> {
             onTap: () => _setPriority(i),
             child: Container(
               height: size.height * 0.074,
-              width: size.width * 0.27,
-              padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+              width: size.width * 0.28,
+              //  padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 6.0),
               decoration: BoxDecoration(
-                color: _priority == i
-                    ? AppColors.orangeColor
-                    : AppColors.lightGreyColor,
-                borderRadius: BorderRadius.all(Radius.circular(20)),
+                color: AppColors.lightGreyColor,
+                border: Border.all(
+                  color: _priority == i
+                      ? AppColors.lightPurpleColor
+                      : AppColors.lightGreyColor,
+                  width: 2.0,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
               child: Center(
                 child: Text(

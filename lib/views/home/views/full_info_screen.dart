@@ -10,7 +10,7 @@ import '../../../data/model/university_info.dart';
 class FullInfoScreen extends StatelessWidget {
   final UniversityInfo universityInfo;
 
-  FullInfoScreen({required this.universityInfo});
+  FullInfoScreen({super.key, required this.universityInfo});
 
   @override
   Widget build(BuildContext context) {
@@ -56,10 +56,15 @@ class FullInfoScreen extends StatelessWidget {
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              SvgPicture.asset('assets/icons/hat.svg'),
+                              SvgPicture.asset(
+                                'assets/icons/hat.svg',
+                                color: Colors.white,
+                              ),
                               SizedBox(
                                 width: size.height * 0.01,
                               ),
@@ -139,7 +144,7 @@ class FullInfoScreen extends StatelessWidget {
                                                       size.height * 0.01,
                                                 ),
                                                 child: Text(
-                                                  '$pro',
+                                                  pro,
                                                   style: FullInfoTextStyle.tile,
                                                 ),
                                               ),
@@ -194,7 +199,7 @@ class FullInfoScreen extends StatelessWidget {
                                                       size.height * 0.01,
                                                 ),
                                                 child: Text(
-                                                  '$con',
+                                                  con,
                                                   style: FullInfoTextStyle.tile,
                                                 ),
                                               ),
@@ -234,16 +239,16 @@ class FullInfoScreen extends StatelessWidget {
                                     child: Row(
                                       children: [
                                         SizedBox(
-                                          width: size.width * 0.01,
+                                          width: size.width * 0.015,
                                         ),
                                         Text(
                                           ' ${universityInfo.specialty?.name}',
-                                          style: FullInfoTextStyle.tileSubtitle,
+                                          style: FullInfoTextStyle.tile,
                                         ),
                                         Spacer(),
                                         Text(
                                           ' ${universityInfo.specialty?.priority}',
-                                          style: FullInfoTextStyle.tileSubtitle,
+                                          style: FullInfoTextStyle.specialty,
                                         ),
                                         SizedBox(
                                           width: size.width * 0.02,
@@ -266,12 +271,11 @@ class FullInfoScreen extends StatelessWidget {
                                       child: Row(
                                         children: [
                                           SizedBox(
-                                            width: size.width * 0.01,
+                                            width: size.width * 0.015,
                                           ),
-                                          const Text(
+                                          Text(
                                             'Tuition fees',
-                                            style:
-                                                FullInfoTextStyle.tileSubtitle,
+                                            style: FullInfoTextStyle.tile,
                                             textAlign: TextAlign.start,
                                             softWrap: true,
                                             overflow: TextOverflow.visible,
@@ -279,8 +283,7 @@ class FullInfoScreen extends StatelessWidget {
                                           Spacer(),
                                           Text(
                                             ' ${universityInfo.cost}',
-                                            style:
-                                                FullInfoTextStyle.tileSubtitle,
+                                            style: FullInfoTextStyle.specialty,
                                           ),
                                           SizedBox(
                                             width: size.width * 0.02,

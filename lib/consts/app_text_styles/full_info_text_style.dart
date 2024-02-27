@@ -5,8 +5,8 @@ import '../app_colors.dart';
 class FullInfoTextStyle {
   static const TextStyle uniName = TextStyle(
     fontFamily: 'Inter',
-    fontSize: 20.0,
-    fontWeight: FontWeight.w700,
+    fontSize: 22.0,
+    fontWeight: FontWeight.w600,
     color: Colors.white,
   );
   static const TextStyle address = TextStyle(
@@ -23,20 +23,20 @@ class FullInfoTextStyle {
 
   static TextStyle tile = const TextStyle(
     fontFamily: 'Inter',
-    fontSize: 18.0,
+    fontSize: 16.0,
     fontWeight: FontWeight.w400,
     color: Colors.white,
   );
   static TextStyle specialty = const TextStyle(
     fontFamily: 'Inter',
-    fontSize: 20.0,
+    fontSize: 14.0,
     height: 20 / 14,
-    fontWeight: FontWeight.w700,
-    color: Colors.black,
+    fontWeight: FontWeight.w400,
+    color: AppColors.lightPurpleColor,
   );
   static TextStyle tileSum = TextStyle(
     fontFamily: 'Roboto',
-    fontSize: 18.0,
+    fontSize: 14.0,
     fontWeight: FontWeight.w400,
     color: Colors.black,
   );
@@ -52,8 +52,8 @@ class FullInfoTextStyle {
   );
   static TextStyle uniNameFOrBaner = TextStyle(
     fontFamily: 'Roboto',
-    fontSize: 20.0,
-    fontWeight: FontWeight.w700,
+    fontSize: 14.0,
+    fontWeight: FontWeight.w400,
     color: AppColors.lightPurpleColor,
   );
 }
